@@ -6,7 +6,8 @@
   <title>tescpns.online — Simulasi CAT CPNS &amp; Try Out Nasional</title>
   <meta name="description" content="Ikuti tes Simulasi CAT CPNS gratis dan ketahui kemampuanmu melalui hasil dan analisis skor.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
     :root{
       --primary:#155eef;
       --primary-dark:#0b4acb;
@@ -904,8 +905,8 @@
     <a class="logo" href="#">tescpns<span>.online</span></a>
     <nav class="nav-links" id="navLinks">
       <a href="#beranda">Beranda</a>
-      <a href="https://login.member.gratis.tescpns.online" target="_blank" rel="noopener">Member Gratis</a>
-      <a href="https://member.premium.tescpns.online/" target="_blank" rel="noopener">Member Premium</a>
+      <a href="https://login.member.gratis.tescpns.online" target="_blank" rel="noopener"><span class="nb">Member</span> <span class="nb">Gratis</span></a>
+      <a href="https://member.premium.tescpns.online/" target="_blank" rel="noopener"><span class="nb">Member</span> <span class="nb">Premium</span></a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu" onclick="toggleMobileMenu()">
       <span></span><span></span><span></span>
@@ -1880,6 +1881,304 @@ footer{background:#fff}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(31,95,240,.45);outline-offset:3px;border-radius:10px}
 @media(max-width:700px){section{padding:36px 0}.hero{padding:40px 0 36px}.section-head{margin-bottom:24px}.trust{padding:24px 0}}
 @media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+
+/* ===== Header HP (rapi & presisi): logo di tengah, menu 3 kolom sama lebar ===== */
+@media(max-width:700px){
+  html{scroll-padding-top:104px}
+  header .nav{
+    height:auto;
+    flex-direction:column;
+    align-items:stretch;
+    flex-wrap:nowrap;
+    gap:10px;
+    padding:10px 0 12px;
+  }
+  header .logo{
+    flex:none;
+    width:100%;
+    justify-content:center;
+    font-size:24px;
+    line-height:1;
+    margin:0;
+  }
+  header .nav-links{
+    flex:none;
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:4px;
+    margin:0;
+    padding:4px;
+    background:#eef2f9;
+    border-radius:14px;
+    font-size:clamp(12px,3.4vw,14px);
+    font-weight:700;
+    letter-spacing:-.015em;
+    line-height:1.2;
+    flex-wrap:nowrap;
+    justify-content:stretch;
+    overflow:visible;
+  }
+  header .nav-links a{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:40px;
+    padding:8px 2px;
+    text-align:center;
+    white-space:normal;
+    min-width:0;
+    min-height:46px;
+    border-radius:10px;
+    color:#3b475d;
+    transition:background .2s,color .2s,box-shadow .2s;
+  }
+  header .nav-links a::after{display:none}
+  header .nav-links .nb{display:block}
+  header .nav-links a:active{background:rgba(21,94,239,.08)}
+  header .nav-links a.active{
+    background:#fff;
+    color:var(--primary);
+    box-shadow:0 1px 3px rgba(10,22,48,.12);
+  }
+}
+@media(max-width:380px){
+  html{scroll-padding-top:100px}
+  header .logo{font-size:22px}
+  header .nav-links{gap:3px;padding:3px}
+  header .nav-links a{padding:8px 2px;min-height:38px}
+}
+
+/* Hilangkan garis tepi biru pada video Panduan Simulasi */
+.video-wrap{border:0}
 </style>
+
+<style id="futuristic-theme">
+/* ===== Tema Elegan & Futuristik (override) ===== */
+:root{
+  --f-bg:#050a1c; --f-bg2:#0a1330; --f-line:rgba(148,170,255,.16);
+  --f-cyan:#22d3ee; --f-blue:#4f8cff; --f-violet:#8b5cf6;
+  --f-grad:linear-gradient(135deg,#22d3ee 0%,#4f8cff 45%,#8b5cf6 100%);
+  --f-font:"Space Grotesk","Plus Jakarta Sans",Inter,ui-sans-serif,system-ui,sans-serif;
+}
+::selection{background:#4f8cff;color:#fff}
+.scroll-progress{background:var(--f-grad);box-shadow:0 0 12px rgba(79,140,255,.8)}
+
+/* Judul: tipografi modern */
+h1,h2,h3,.logo,.stat-num{font-family:var(--f-font)}
+
+/* ---------- Header: kaca gelap ---------- */
+header{
+  background:rgba(5,10,28,.72) !important;
+  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid transparent !important;
+  box-shadow:0 1px 0 rgba(148,170,255,.14),0 10px 40px -20px rgba(0,0,0,.6);
+}
+header::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(34,211,238,.7),rgba(139,92,246,.7),transparent);opacity:.7;pointer-events:none}
+header .logo{color:#fff;letter-spacing:-.04em}
+header .logo span{background:linear-gradient(135deg,#ff8a3d,#ffc23d);-webkit-background-clip:text;background-clip:text;color:transparent}
+header .nav-links{color:#c7d3f2}
+header .nav-links a{color:#c7d3f2}
+header .nav-links a:hover{color:#fff;text-shadow:0 0 14px rgba(79,140,255,.9)}
+header .nav-links a::after{background:var(--f-grad);height:2px}
+header .nav-links a.active{color:#fff}
+
+/* ---------- Hero: aurora + grid ---------- */
+.hero{
+  background:
+    radial-gradient(55% 60% at 85% 0%,rgba(79,140,255,.38),transparent 70%),
+    radial-gradient(45% 55% at 5% 10%,rgba(139,92,246,.30),transparent 70%),
+    radial-gradient(50% 50% at 50% 110%,rgba(34,211,238,.20),transparent 70%),
+    linear-gradient(180deg,var(--f-bg) 0%,var(--f-bg2) 100%) !important;
+  border-radius:0 0 44px 44px;
+  isolation:isolate;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(148,170,255,.09) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(148,170,255,.09) 1px,transparent 1px);
+  background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(75% 75% at 50% 35%,#000 30%,transparent 100%);
+  mask-image:radial-gradient(75% 75% at 50% 35%,#000 30%,transparent 100%);
+}
+.hero::after{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  width:520px;height:520px;border-radius:50%;left:50%;top:-180px;transform:translateX(-50%);
+  background:radial-gradient(circle,rgba(79,140,255,.28),transparent 65%);
+  filter:blur(30px);animation:fAurora 9s ease-in-out infinite alternate;
+}
+@keyframes fAurora{from{transform:translateX(-62%) scale(1)}to{transform:translateX(-38%) scale(1.15)}}
+
+.hero h1{
+  color:#fff;letter-spacing:-.035em;
+  background:linear-gradient(100deg,#ffffff 10%,#b9d0ff 50%,#67e8f9 95%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 6px 30px rgba(79,140,255,.35));
+}
+.hero p{color:#aab8d8}
+.hero-photo{
+  border:1px solid rgba(160,185,255,.28);
+  box-shadow:0 0 0 6px rgba(79,140,255,.07),0 40px 90px -30px rgba(79,140,255,.65),0 0 60px -10px rgba(34,211,238,.25);
+  outline:0;position:relative;
+}
+.hero-photo::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(180deg,transparent 60%,rgba(5,10,28,.35));}
+
+/* ---------- Tombol ---------- */
+.nav-cta,.btn-primary{
+  background:linear-gradient(135deg,#2f7bff 0%,#6a5cff 60%,#8b5cf6 100%) !important;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 0 0 1px rgba(255,255,255,.06) inset,0 12px 30px -10px rgba(79,140,255,.9),0 0 30px -6px rgba(139,92,246,.6);
+  letter-spacing:.01em;
+}
+.nav-cta:hover,.btn-primary:hover{
+  background:linear-gradient(135deg,#4a8dff 0%,#7c6dff 60%,#a06cff 100%) !important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.1) inset,0 18px 40px -10px rgba(79,140,255,1),0 0 40px -4px rgba(139,92,246,.8);
+}
+@keyframes btnGlow{
+  0%,100%{box-shadow:0 0 0 0 rgba(79,140,255,.5),0 12px 30px -10px rgba(79,140,255,.9),0 0 30px -6px rgba(139,92,246,.6)}
+  50%{box-shadow:0 0 0 14px rgba(79,140,255,0),0 14px 34px -8px rgba(79,140,255,1),0 0 40px -4px rgba(139,92,246,.8)}
+}
+.btn-ebook{
+  background:linear-gradient(135deg,#ff7a1a,#ffb020) !important;
+  color:#1b1204 !important;border:0 !important;
+  box-shadow:0 10px 28px -10px rgba(255,138,40,.8) !important;
+}
+@keyframes ebookGlow{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,150,40,.45),0 10px 28px -10px rgba(255,138,40,.8)}
+  50%{box-shadow:0 0 0 12px rgba(255,150,40,0),0 14px 34px -8px rgba(255,138,40,.95)}
+}
+
+/* ---------- Eyebrow & judul seksi ---------- */
+.eyebrow{
+  background:linear-gradient(135deg,rgba(34,211,238,.10),rgba(139,92,246,.10)) !important;
+  border:1px solid rgba(79,140,255,.35) !important;
+  color:#2f5fe0;text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;font-weight:800;
+  box-shadow:0 0 22px -8px rgba(79,140,255,.6);
+}
+.section-head h2,.benefit h2,.compare-title,.video-section-title{
+  background:linear-gradient(120deg,#0a1630 20%,#1f5ff0 75%,#7c3aed 110%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:-.035em;
+}
+
+/* ---------- Trust & fitur: kartu kaca ---------- */
+.trust{background:linear-gradient(180deg,#fff,#f4f7ff);border-color:transparent}
+.trust-item,.feature{
+  background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(246,249,255,.9));
+  border:1px solid rgba(79,140,255,.16);
+  box-shadow:0 1px 0 #fff inset,0 10px 30px -14px rgba(31,70,160,.25);
+  transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;
+}
+.trust-item:hover,.feature:hover{
+  border-color:rgba(79,140,255,.55);
+  box-shadow:0 1px 0 #fff inset,0 18px 40px -14px rgba(79,140,255,.45),0 0 0 4px rgba(79,140,255,.07);
+}
+.trust-icon{box-shadow:0 8px 22px -6px rgba(79,140,255,.55),0 0 0 1px rgba(255,255,255,.35) inset}
+
+/* ---------- Statistik ---------- */
+.stats{position:relative;overflow:hidden;
+  background:radial-gradient(70% 140% at 50% 0%,#17358c 0%,var(--f-bg) 72%)}
+.stats::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(148,170,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(148,170,255,.07) 1px,transparent 1px);
+  background-size:44px 44px;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)}
+.stats .container{position:relative}
+.stat-num,.stat-num span{
+  background:linear-gradient(135deg,#ffffff 0%,#7fe9ff 50%,#8fa8ff 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent !important;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 18px rgba(79,140,255,.45));
+}
+.stat-label{color:#9fb0d6;letter-spacing:.04em}
+
+/* ---------- Langkah ---------- */
+.step{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 100% 0%,rgba(79,140,255,.28),transparent 60%),
+    linear-gradient(165deg,#10245f 0%,#070f27 100%) !important;
+  border:1px solid rgba(148,170,255,.22) !important;
+  box-shadow:0 24px 50px -26px rgba(10,22,48,.8),0 0 0 1px rgba(255,255,255,.03) inset !important;
+}
+.step::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(34,211,238,.9),transparent)}
+.step-num{
+  font-family:var(--f-font);color:transparent !important;font-size:20px;
+  background:var(--f-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.step:hover{box-shadow:0 30px 60px -24px rgba(79,140,255,.65),0 0 0 1px rgba(79,140,255,.4) inset !important}
+
+/* ---------- Video, galeri, demo ---------- */
+.video-wrap{
+  box-shadow:0 0 0 1px rgba(79,140,255,.35),0 30px 70px -26px rgba(79,140,255,.6),0 0 60px -20px rgba(139,92,246,.45);
+}
+.video-play{background:var(--f-grad) !important;box-shadow:0 0 0 8px rgba(79,140,255,.18),0 0 40px rgba(79,140,255,.8)}
+.shot-viewport{
+  border:1px solid rgba(79,140,255,.35) !important;
+  box-shadow:0 30px 70px -28px rgba(79,140,255,.5),0 0 0 4px rgba(79,140,255,.06);
+}
+.shot-dots button.active{background:var(--f-grad)}
+.demo-wrap{
+  border:1px solid rgba(79,140,255,.4) !important;
+  box-shadow:0 30px 70px -28px rgba(79,140,255,.55),0 0 0 5px rgba(79,140,255,.06) !important;
+}
+
+/* ---------- Benefit & kartu member ---------- */
+.benefit{background:linear-gradient(180deg,#f4f7ff,#eef3ff)}
+.member-benefit{background:
+  radial-gradient(50% 40% at 10% 0%,rgba(79,140,255,.08),transparent 70%),
+  radial-gradient(40% 40% at 95% 20%,rgba(139,92,246,.08),transparent 70%)}
+.member-card{
+  background:linear-gradient(180deg,#fff,#f8faff) !important;
+  border:1px solid rgba(79,140,255,.2) !important;
+}
+.member-card.premium{
+  border:2px solid transparent !important;
+  background:linear-gradient(180deg,#fff,#f7f9ff) padding-box,var(--f-grad) border-box !important;
+  box-shadow:0 30px 70px -26px rgba(79,140,255,.6),0 0 60px -22px rgba(139,92,246,.5) !important;
+}
+.member-card.premium:before{background:var(--f-grad) !important;letter-spacing:.14em}
+.member-badge{background:rgba(79,140,255,.1) !important;letter-spacing:.06em}
+
+/* ---------- CTA ---------- */
+.cta,.siap-cta{
+  position:relative;
+  background:
+    radial-gradient(70% 120% at 90% 0%,rgba(79,140,255,.45),transparent 65%),
+    radial-gradient(60% 100% at 0% 100%,rgba(139,92,246,.3),transparent 65%),
+    linear-gradient(160deg,#0b1a4a,var(--f-bg)) !important;
+  border:1px solid rgba(148,170,255,.25);
+  box-shadow:0 40px 80px -30px rgba(79,140,255,.55);
+}
+.cta h2,.siap-cta strong{color:#fff;-webkit-text-fill-color:#fff;background:none}
+
+/* ---------- FAQ ---------- */
+.faq-item{border-bottom:1px solid rgba(79,140,255,.18)}
+.faq-q:hover{color:#2f5fe0}
+
+/* ---------- Footer gelap ---------- */
+footer{background:linear-gradient(180deg,var(--f-bg2),var(--f-bg)) !important;color:#9fb0d6 !important;border-top:1px solid rgba(148,170,255,.16)}
+footer .logo{color:#fff}
+footer .logo span{background:linear-gradient(135deg,#ff8a3d,#ffc23d);-webkit-background-clip:text;background-clip:text;color:transparent}
+footer .footer-disclaimer{border-top-color:rgba(148,170,255,.14);color:#7f8fb3}
+
+/* ---------- Header HP: pil kaca gelap ---------- */
+@media(max-width:700px){
+  header .nav-links{background:rgba(255,255,255,.06);border:1px solid rgba(148,170,255,.18)}
+  header .nav-links a{color:#c7d3f2}
+  header .nav-links a:active{background:rgba(79,140,255,.18)}
+  header .nav-links a.active{
+    color:#fff;
+    background:linear-gradient(135deg,rgba(47,123,255,.55),rgba(139,92,246,.5));
+    box-shadow:0 0 0 1px rgba(160,185,255,.35) inset,0 6px 18px -6px rgba(79,140,255,.8);
+  }
+  .hero{border-radius:0 0 28px 28px}
+  .hero::before{background-size:36px 36px}
+}
+@media(prefers-reduced-motion:reduce){.hero::after{animation:none !important}}
+</style>
+
 </body>
 </html>
